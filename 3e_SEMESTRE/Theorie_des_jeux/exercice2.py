@@ -109,6 +109,8 @@ def jouer():
     global arene
     while len(casesVides(arene)) > 0 and not gameover(arene):
         arene = jouerHumain(arene)
+        if len(casesVides(arene)) == 0 or gameover(arene):
+            break
         arene = jouerIA(arene)
 
     if estGagnant(arene, HUMAIN):
